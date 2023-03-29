@@ -1,6 +1,7 @@
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
+import PropTypes from 'prop-types';
 import { Form, Field, Btn, ErrorMessage } from './ContactForm.styled';
 
 const ContactSchema = Yup.object().shape({
@@ -51,4 +52,8 @@ export const ContactForm = ({ onAddContact }) => {
       </Form>
     </Formik>
   );
+};
+
+ContactForm.propTypes = {
+  onAddContact: PropTypes.func.isRequired,
 };
